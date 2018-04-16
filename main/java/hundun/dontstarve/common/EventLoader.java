@@ -53,7 +53,7 @@ public class EventLoader {
 	{
 	    if (event.getEntity() instanceof EntitySpider)
 	    {
-	        int radomint=getRadomInt(3);
+	        int radomint=new Random().nextInt(3);
 	        if(radomint==0){
 	        ItemStack itemStackToDrop = new ItemStack(ItemLoader.spiderGland, 1);
 	        event.getDrops().add(new EntityItem(event.getEntity().worldObj, event.getEntity().posX, 
@@ -81,6 +81,8 @@ public class EventLoader {
             }
         }
     }
+	
+	
 	
 	/*
 	@SubscribeEvent
@@ -118,10 +120,6 @@ public class EventLoader {
     }
 	
 	
-	//get [0,max] radom int
-	private int getRadomInt(int max){
-		Random random = new Random();
-		return random.nextInt(max);
-	}
+
 
 }

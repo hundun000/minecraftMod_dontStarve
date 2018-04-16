@@ -4,6 +4,8 @@ import com.google.common.base.Function;
 
 import hundun.dontstarve.DontStarve;
 import hundun.dontstarve.IModName;
+import hundun.dontstarve.itemBlock.ItemBlockBerryBush;
+import hundun.dontstarve.itemBlock.ItemBlockMetalFurnace;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -21,12 +23,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class BlockLoader
 {
     public static Block boulder = new BlockBoulder();
-    public static Block willowsLighter = new BlockWillowsLighter();
     public static Block berryBush = new BlockBerryBush();
-    
-    public static Block unripeBerryBush = new BlockUnripeBerryBush();
-    public static Block barrenBerryBush = new BlockBarrenBerryBush();
 
+    public static Block metalFurnace = new BlockMetalFurnace();
 
     
 
@@ -36,10 +35,9 @@ public class BlockLoader
     {//registerByBlock();
     	
         registerByBlock(boulder);
-        registerByBlock(willowsLighter);
-        registerByBlock(berryBush);
-        registerByBlock(unripeBerryBush);
-        registerByBlock(barrenBerryBush);
+        
+        registerMulMeta(metalFurnace,new ItemBlockMetalFurnace());
+        registerMulMeta(berryBush,new ItemBlockBerryBush());
        // registerByBlock(saplingDS);
         
 
@@ -52,39 +50,40 @@ public class BlockLoader
     public static void registerRenders()
     {// registerRender();
         registerRender(boulder);
-        registerRender(willowsLighter);
-        registerRender(berryBush);
-        registerRender(unripeBerryBush);
-        registerRender(barrenBerryBush);
-
+        
+        registerMulMetaRender(metalFurnace, 0, "iron_furnace");
+        registerMulMetaRender(metalFurnace, 8, "gold_furnace");
+        
+        registerMulMetaRender(berryBush, 0, "berry_bush_harvest");
+        registerMulMetaRender(berryBush, 1, "berry_bush_barren");
+        registerMulMetaRender(berryBush, 2, "berry_bush_unripe");
         
     }
     
     
 
-    
-    
-    
-    //渲染助手
+    //渲染助手常用型
     @SideOnly(Side.CLIENT)
     private static void registerRender(Block blockIn)
     {
     	//加载item的模型,无meta值则默认为0
-    	registerRender(blockIn,0,((IModName) blockIn).getName());
+    	registerMulMetaRender(blockIn,0,((IModName) blockIn).getName());
     }
     
+    //渲染助手一般型
     @SideOnly(Side.CLIENT)
-    private static void registerRender(Block blockIn, int meta,String name)
+    private static void registerMulMetaRender(Block blockIn, int meta,String name)
     {
     	ResourceLocation location = new ResourceLocation(DontStarve.MODID, name);
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(blockIn), meta, new ModelResourceLocation(location, "inventory"));
-        ModelLoader.registerItemVariants(Item.getItemFromBlock(blockIn), location);
+    	ModelResourceLocation model = new ModelResourceLocation(location, "inventory");
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(blockIn), meta, model);
+       // ModelLoader.registerItemVariants(Item.getItemFromBlock(blockIn), location);
     }
     
     
     
     
-    //注册助手
+    //注册助手常用型
     private static void registerByBlock(Block blockIn)
     {
     	//注册block
@@ -93,10 +92,12 @@ public class BlockLoader
         GameRegistry.register(new ItemBlock(blockIn).setRegistryName(DontStarve.MODID, ((IModName) blockIn).getName()));
     }
     
-    
-    private static void registerMulMeta(Block block, ItemBlock itemBlock)
-    {
-    	registerByBlock(block);
+    //注册助手非默认ItemBlock型
+    private static void registerMulMeta(Block block, ItemBlock itemBlock){
+    	//注册block
+    	GameRegistry.register(block);
+    	//注册item
+        GameRegistry.register(itemBlock);
         GameData.getBlockItemMap().put(block, itemBlock);
     }
 }

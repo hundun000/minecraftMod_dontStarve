@@ -15,5 +15,10 @@ tile.dontstarve.boulder.name=巨砾
 tile.dontstarve.berry_bush.name=浆果丛
 tile.dontstarve.unripe_berry_bush.name=未成熟浆果丛
 tile.dontstarve.barren_berry_bush.name=枯萎浆果丛
+tile.dontstarve.metal_furnace.iron.name=铁炉
+tile.dontstarve.metal_furnace.gold.name=金炉
+tile.dontstarve.berry_bush.harvest.name=浆果丛
+tile.dontstarve.berry_bush.unripe.name=未成熟浆果丛
+tile.dontstarve.berry_bush.barren.name=枯萎浆果丛
 
 death.attack.byPig=%s被猪弄死了! 

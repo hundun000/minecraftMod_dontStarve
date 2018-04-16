@@ -1,6 +1,6 @@
 {
     "parent": "block/cross",
     "textures": {
-        "cross": "dontstarve:blocks/berry_bush"
+        "cross": "dontstarve:blocks/berry_bush_unripe"
     }
 }

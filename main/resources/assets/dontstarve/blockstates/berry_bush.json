@@ -1,5 +1,7 @@
 {
     "variants": {
-        "normal": { "model": "dontstarve:berry_bush" }
+        "fertility=harvest": { "model": "dontstarve:berry_bush_harvest" },
+        "fertility=barren": { "model": "dontstarve:berry_bush_barren" },
+        "fertility=unripe": { "model": "dontstarve:berry_bush_unripe" }
     }
 }

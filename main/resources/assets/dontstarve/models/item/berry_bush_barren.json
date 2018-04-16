@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "dontstarve:blocks/berry_bush"
+        "layer0": "dontstarve:blocks/berry_bush_barren"
     },
     "display": {
         "thirdperson": {

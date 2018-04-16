@@ -23,10 +23,14 @@ public class ItemLoader {
 	
 	public static Item cutGrass = new ItemCutGrass();
 	public static Item rope = new ItemRope();	
-	public static Item razor = new ItemRazor();
+	
 	public static Item spiderGland = new ItemSpiderGland();
 	public static Item butterflyWings = new ItemButterflyWings();
 	public static Item monsterMeat=new ItemMonsterMeat();
+	
+	//tool
+	public static Item razor = new ItemRazor();
+	public static Item lighter = new ItemLighter();
 	
 	//food
 	public static Item tallBirdEgg=new ItemTallBirdEgg();
@@ -40,10 +44,12 @@ public class ItemLoader {
 	public ItemLoader(FMLPreInitializationEvent event)
     {
         registerByItem(cutGrass);
-        registerByItem(rope);
-        registerByItem(razor);
+        registerByItem(rope);    
         registerByItem(spiderGland); 
         
+        //tool
+        registerByItem(razor);
+        registerByItem(lighter);
         
         //food
         registerByItem(butterflyWings);
@@ -63,9 +69,12 @@ public class ItemLoader {
     	RendersByItem(cutGrass);
     	RendersByItem(rope);
     	
-    	RendersByItem(razor);
+    	
     	RendersByItem(spiderGland);
     	
+    	//tool
+    	RendersByItem(razor);
+    	RendersByItem(lighter);
     	
     	
     	//food
