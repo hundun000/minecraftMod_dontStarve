@@ -2,6 +2,13 @@ package hundun.dontstarve.item;
 
 import hundun.dontstarve.DontStarve;
 import hundun.dontstarve.IModName;
+import hundun.dontstarve.item.food.ItemBerries;
+import hundun.dontstarve.item.food.ItemBigMeat;
+import hundun.dontstarve.item.food.ItemButterflyWings;
+import hundun.dontstarve.item.food.ItemHoney;
+import hundun.dontstarve.item.food.ItemMonsterMeat;
+import hundun.dontstarve.item.food.ItemRoastedBerries;
+import hundun.dontstarve.item.food.ItemTallBirdEgg;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
@@ -15,13 +22,18 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ItemLoader {
 	
 	public static Item cutGrass = new ItemCutGrass();
-	public static Item rope = new ItemRope();
-	public static Item berries = new ItemBerries();
-	public static Item roastedBerries = new ItemRoastedBerries();
+	public static Item rope = new ItemRope();	
 	public static Item razor = new ItemRazor();
 	public static Item spiderGland = new ItemSpiderGland();
-	public static Item honey = new ItemHoney();
 	public static Item butterflyWings = new ItemButterflyWings();
+	public static Item monsterMeat=new ItemMonsterMeat();
+	
+	//food
+	public static Item tallBirdEgg=new ItemTallBirdEgg();
+	public static Item berries = new ItemBerries();
+	public static Item roastedBerries = new ItemRoastedBerries();
+	public static Item honey = new ItemHoney();
+	public static Item bigMeat= new ItemBigMeat();
 	
 	
 	//注册item们
@@ -29,16 +41,19 @@ public class ItemLoader {
     {
         registerByItem(cutGrass);
         registerByItem(rope);
+        registerByItem(razor);
+        registerByItem(spiderGland); 
+        
+        
+        //food
+        registerByItem(butterflyWings);
+        registerByItem(monsterMeat);
+        registerByItem(bigMeat);        
         registerByItem(berries);
         registerByItem(roastedBerries);
-        registerByItem(razor);
-        registerByItem(spiderGland);
         registerByItem(honey);
-        registerByItem(butterflyWings);
-        
-        
+        registerByItem(tallBirdEgg);
     }
-	
 	
 	
 	//渲染item们
@@ -47,13 +62,20 @@ public class ItemLoader {
     {
     	RendersByItem(cutGrass);
     	RendersByItem(rope);
-    	RendersByItem(berries);
-    	RendersByItem(roastedBerries);
+    	
     	RendersByItem(razor);
     	RendersByItem(spiderGland);
+    	
+    	
+    	
+    	//food
+    	RendersByItem(monsterMeat);
+    	RendersByItem(bigMeat);
+    	RendersByItem(berries);
+    	RendersByItem(roastedBerries);
     	RendersByItem(honey);
     	RendersByItem(butterflyWings);
-    	
+    	RendersByItem(tallBirdEgg);
     }
 	
     

@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "dontstarve:berries"
+        "layer0": "dontstarve:items/berries"
     }
 }

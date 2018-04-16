@@ -1,4 +1,4 @@
-package hundun.dontstarve.item;
+package hundun.dontstarve.item.food;
 
 import hundun.dontstarve.DontStarve;
 import hundun.dontstarve.MyTool;
@@ -12,8 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
 
-public class ItemBerries extends ItemFood implements IModName
-{
+public class ItemBerries extends ItemFood implements IModName{
 
 	
     public ItemBerries()
@@ -23,9 +22,6 @@ public class ItemBerries extends ItemFood implements IModName
 		MyTool.generalSet(this);
 		
 		setAlwaysEdible();
-		setMaxDamage(100);
-		setMaxStackSize(20);
-		
 
     }
 
@@ -34,7 +30,7 @@ public class ItemBerries extends ItemFood implements IModName
 		return "berries";
 	}
     
-	
+	/*
 	@Override
 	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
     {
@@ -47,6 +43,7 @@ public class ItemBerries extends ItemFood implements IModName
 		setDamage(stack,damage+rotQuantity);
 		System.out.println("发生腐败，腐败度+"+rotQuantity+"，目前腐败度"+damage+rotQuantity);
 	}
+	*/
 
 
 

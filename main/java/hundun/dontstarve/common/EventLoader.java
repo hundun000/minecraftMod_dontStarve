@@ -15,15 +15,19 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntitySpider;
+import net.minecraft.entity.passive.EntityPig;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent.EntityInteract;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
@@ -42,6 +46,8 @@ public class EventLoader {
         secends=0;
     }
 
+	
+	//spider add drop item
 	@SubscribeEvent(priority=EventPriority.NORMAL, receiveCanceled=true)
 	public void spiderDrop(LivingDropsEvent event)
 	{
@@ -55,27 +61,8 @@ public class EventLoader {
 	        }
 	    }
 	} 
-
-	//改为点击浆果丛即可收货浆果
-	/*
-	@SubscribeEvent(priority=EventPriority.NORMAL, receiveCanceled=true)
-	public void berriesBushclick(BlockEvent event)
-	{
-		System.out.println("触发了方块破坏事件");
-	    if (event.getState().getBlock() == BlockLoader.berryBush)
-	    {	        	    	
-	    	if (!event.getWorld().isRemote) {
-	    		System.out.println("被破坏的方块为浆果丛");
-	    		BlockPos pos=event.getPos();
-	            EntityItem entity = new EntityItem(event.getWorld(), pos.getX(), pos.getY(),pos.getZ(), new ItemStack(ItemLoader.berries, 1));	            
-	            event.getWorld().spawnEntityInWorld(entity); // 放置实体
-	            event.getWorld().setBlockState(pos,Blocks.DEADBUSH.getDefaultState());
-	            event.setCanceled(true);
-	        }
-	        	        
-	    }
-	} 
-    */
+	
+	
 	
 	@SubscribeEvent
     public void onPlayerClickGrassBlock(BonemealEvent event)
@@ -95,6 +82,7 @@ public class EventLoader {
         }
     }
 	
+	/*
 	@SubscribeEvent
 	public void onServerTick(TickEvent.ServerTickEvent event)
 	{
@@ -110,6 +98,24 @@ public class EventLoader {
 	        	
 	    }
 	}
+	*/
+	
+	@SubscribeEvent
+    public void onEntityInteract(EntityInteract event)
+    {
+        EntityPlayer player = event.getEntityPlayer();
+        if (player.isServerWorld() && event.getTarget() instanceof EntityPig)
+        {
+            EntityPig pig = (EntityPig) event.getTarget();
+            ItemStack stack =player.getHeldItemMainhand();
+            if (stack != null && (stack.getItem() == ItemLoader.monsterMeat))
+            {
+                player.attackEntityFrom((new DamageSource("byPig")).setDifficultyScaled().setExplosion(), 8.0F);
+                player.worldObj.createExplosion(pig, pig.posX, pig.posY, pig.posZ, 2.0F, false);
+                pig.setDead();
+            }
+        }
+    }
 	
 	
 	//get [0,max] radom int

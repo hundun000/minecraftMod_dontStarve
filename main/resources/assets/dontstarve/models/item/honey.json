@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "dontstarve:Items/honey"
+        "layer0": "dontstarve:items/honey"
     }
 }

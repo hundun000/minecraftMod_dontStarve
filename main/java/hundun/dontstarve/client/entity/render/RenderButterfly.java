@@ -15,7 +15,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class RenderButterfly extends RenderLiving<EntityButterfly>
 {
     private static final ResourceLocation BUTTERFLY_TEXTURE = new ResourceLocation(
-            DontStarve.MODID + ":" + "textures/entity/butterfly.png");
+            DontStarve.MODID + ":" + "textures/entities/butterfly.png");
 
     public RenderButterfly(RenderManager renderManager)
     {

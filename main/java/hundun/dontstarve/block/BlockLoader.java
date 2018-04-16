@@ -23,10 +23,10 @@ public class BlockLoader
     public static Block boulder = new BlockBoulder();
     public static Block willowsLighter = new BlockWillowsLighter();
     public static Block berryBush = new BlockBerryBush();
-    public static Block metalFurnace = new BlockMetalFurnace();
+    
     public static Block unripeBerryBush = new BlockUnripeBerryBush();
     public static Block barrenBerryBush = new BlockBarrenBerryBush();
-    public static Block saplingDS = new BlockSaplingDS();
+
 
     
 
@@ -42,25 +42,9 @@ public class BlockLoader
         registerByBlock(barrenBerryBush);
        // registerByBlock(saplingDS);
         
-        registerMulMeta(saplingDS, new ItemMultiTexture(saplingDS, saplingDS, 
-                new Function<ItemStack, String>(){
-                   @Override
-                   public String apply(ItemStack input)
-                   {
-                   	return BlockSaplingDS.EnumTypeRipe.values()[input.getMetadata()].getName();
-                   }
-                }
-           ));
+
         
-        registerMulMeta(metalFurnace, new ItemMultiTexture(metalFurnace, metalFurnace, 
-             new Function<ItemStack, String>(){
-                @Override
-                public String apply(ItemStack input)
-                {
-                	return BlockMetalFurnace.EnumMaterial.values()[input.getMetadata() >> 3].getName();
-                }
-             }
-        ));
+        
         
     }
 
@@ -72,10 +56,7 @@ public class BlockLoader
         registerRender(berryBush);
         registerRender(unripeBerryBush);
         registerRender(barrenBerryBush);
-        registerRender(saplingDS, 0,"saplingDS_ripe");
-        registerRender(saplingDS, 1,"saplingDS_unripe");
-        registerRender(metalFurnace, 0,"iron_furnace");
-        registerRender(metalFurnace, 8,"gold_furnace");
+
         
     }
     

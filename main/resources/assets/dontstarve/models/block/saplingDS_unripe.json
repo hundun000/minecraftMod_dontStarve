@@ -1,6 +1,0 @@
-{
-    "parent": "block/cross",
-    "textures": {
-        "cross": "dontstarve:blocks/saplingDS_unripe"
-    }
-}

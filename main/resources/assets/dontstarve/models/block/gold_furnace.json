@@ -1,8 +1,0 @@
-{
-    "parent": "block/orientable",
-    "textures": {
-        "top": "dontstarve:blocks/gold_furnace_side",
-        "front": "dontstarve:blocks/gold_furnace",
-        "side": "dontstarve:blocks/gold_furnace_side"
-    }
-}

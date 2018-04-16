@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "type=ripe": { "model":"dontstarve:saplingDS_ripe" },
-        "type=unripe": { "model":"dontstarve:saplingDS_unripe" }
-    }
-}

@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "dontstarve:Items/butterfly_wings"
+        "layer0": "dontstarve:items/butterfly_wings"
     }
 }

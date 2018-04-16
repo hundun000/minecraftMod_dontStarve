@@ -1,6 +1,6 @@
 itemGroup.dontstarve=Don't Starve
-item.dontstarve.cutGrass.name=cut grass
+item.dontstarve.cut_grass.name=cut grass
 tile.dontstarve.boulder.name=Boulder
 item.dontstarve.rope.name=rope
-item.dontstarve.berries.name=berrise
-item.dontstarve.roastBerries.name=roasted berries
+item.dontstarve.berries.name=berries
+item.dontstarve.roast_berries.name=roasted berries

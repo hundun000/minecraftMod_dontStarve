@@ -1,4 +1,4 @@
-package hundun.dontstarve.item;
+package hundun.dontstarve.item.food;
 
 import hundun.dontstarve.DontStarve;
 import hundun.dontstarve.MyTool;

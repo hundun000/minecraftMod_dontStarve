@@ -26,11 +26,6 @@ public class CraftingLoader
     	GameRegistry.addShapelessRecipe(new ItemStack(ItemLoader.rope), ItemLoader.cutGrass,ItemLoader.cutGrass,ItemLoader.cutGrass); 	 
     	GameRegistry.addRecipe(new ItemStack(ItemLoader.razor), " x", "x ", 
     	        'x',new ItemStack(Blocks.COBBLESTONE));
-    	List<ItemStack> list = new ArrayList();
-    	list.add(new ItemStack(ItemLoader.berries));
-    	list.add(new ItemStack(ItemLoader.berries));
-    	IRecipe recipeRot=new RecipeRot(new ItemStack(ItemLoader.berries),list);
-    	GameRegistry.addRecipe(recipeRot);
     }
 
     private static void registerSmelting(){

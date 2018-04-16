@@ -11,7 +11,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class WorldGeneratorLoader
 {
 	private static WorldGenerator generatorBoulder = new WorldGeneratorBoulder();
-	private static WorldGenerator generatorSapling = new WorldGeneratorSapling();
 	
 	private BlockPos posFirstTime;
 	
@@ -30,9 +29,5 @@ public class WorldGeneratorLoader
         }
     }
     
-    @SubscribeEvent
-    public void addSapling(OreGenEvent.Post event)
-    {
-            generatorSapling.generate(event.getWorld(), event.getRand(), event.getPos());
-    }
+
 }

@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "dontstarve:spider_gland"
+        "layer0": "dontstarve:items/spider_gland"
     }
 }

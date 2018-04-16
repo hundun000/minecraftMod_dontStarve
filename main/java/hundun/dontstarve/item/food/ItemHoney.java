@@ -1,4 +1,4 @@
-package hundun.dontstarve.item;
+package hundun.dontstarve.item.food;
 
 import hundun.dontstarve.MyTool;
 import hundun.dontstarve.IModName;
@@ -12,7 +12,7 @@ public class ItemHoney extends ItemFood implements IModName
     {
         super(0, 0, false);
         MyTool.generalSet(this);
-        setPotionEffect(new PotionEffect(Potion.getPotionById(6), 1, 0), 1.0F);
+        setPotionEffect(new PotionEffect(Potion.getPotionById(6), 30, 0), 1.0F);
         setAlwaysEdible();
         
     }
