@@ -1,4 +1,4 @@
-package hundun.dontstarve.client.entity;
+package hundun.dontstarve.client.entityTool;
 
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;

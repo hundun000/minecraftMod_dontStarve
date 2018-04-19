@@ -1,0 +1,25 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "orientable",
+        "textures": {
+            "top": "dontstarve:blocks/iron_furnace_side",
+            "side": "dontstarve:blocks/iron_furnace_side"
+        }
+    },
+    "variants": {
+        "inventory": [{
+             "textures": { "front": "dontstarve:blocks/iron_furnace" }
+        }],
+        "burning": {
+            "true": { "textures": { "front": "dontstarve:blocks/iron_furnace_burning" } },
+            "false": { "textures": { "front": "dontstarve:blocks/iron_furnace" } }
+        },
+        "facing": {
+            "east": { "y": 90, "uvlock": true },
+            "north": {},
+            "south": { "y": 180, "uvlock": true },
+            "west": { "y": 270, "uvlock": true }
+        }
+    }
+}

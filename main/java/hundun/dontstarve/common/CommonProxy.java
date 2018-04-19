@@ -1,5 +1,6 @@
 package hundun.dontstarve.common;
 
+import hundun.dontstarve.achievement.AchievementLoader;
 import hundun.dontstarve.block.BlockLoader;
 import hundun.dontstarve.crafting.CraftingLoader;
 import hundun.dontstarve.creativetab.CreativeTabsLoader;
@@ -7,6 +8,7 @@ import hundun.dontstarve.entity.EntityLoader;
 import hundun.dontstarve.item.ItemLoader;
 import hundun.dontstarve.material.MaterialBuilding;
 import hundun.dontstarve.material.MaterialLoader;
+import hundun.dontstarve.tileEntity.TileEntityLoader;
 import hundun.dontstarve.worldgen.WorldGeneratorLoader;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -29,7 +31,9 @@ public class CommonProxy
     	new CraftingLoader();
     	new EventLoader();
     	new WorldGeneratorLoader();
+    	new AchievementLoader();
     	new EntityLoader();
+    	new TileEntityLoader(event);
 
     }
 

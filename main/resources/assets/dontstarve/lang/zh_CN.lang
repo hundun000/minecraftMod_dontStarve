@@ -22,3 +22,7 @@ tile.dontstarve.berry_bush.unripe.name=未成熟浆果丛
 tile.dontstarve.berry_bush.barren.name=枯萎浆果丛
 
 death.attack.byPig=%s被猪弄死了! 
+
+
+achievement.dontstarve.getFirstBerries=采集浆果
+achievement.dontstarve.getFirstBerries.desc=从浆果丛上获得浆果

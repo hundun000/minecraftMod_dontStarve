@@ -3,9 +3,9 @@ package hundun.dontstarve.entity;
 import java.awt.Color;
 
 import hundun.dontstarve.DontStarve;
-import hundun.dontstarve.client.entity.EntityRenderFactory;
-import hundun.dontstarve.client.entity.render.RenderButterfly;
-import hundun.dontstarve.client.entity.render.RenderTallBird;
+import hundun.dontstarve.client.entityTool.EntityRenderFactory;
+import hundun.dontstarve.client.entityTool.render.RenderButterfly;
+import hundun.dontstarve.client.entityTool.render.RenderTallBird;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;

@@ -1,4 +1,4 @@
-package hundun.dontstarve.client.entity;
+package hundun.dontstarve.client.entityTool;
 
 import hundun.dontstarve.entity.EntityLoader;
 

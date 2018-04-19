@@ -7,6 +7,7 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import hundun.dontstarve.MyTool;
+import hundun.dontstarve.achievement.AchievementLoader;
 import hundun.dontstarve.IModName;
 import hundun.dontstarve.item.ItemLoader;
 import hundun.dontstarve.material.MaterialLoader;
@@ -71,6 +72,7 @@ public class BlockBerryBush extends BlockBush implements IModName,IGrowable{
 	            EntityItem entity = new EntityItem(worldIn, pos.getX(), pos.getY(),pos.getZ(), new ItemStack(ItemLoader.berries, 1));
 	            worldIn.spawnEntityInWorld(entity); // 放置实体
 	            worldIn.setBlockState(pos, this.blockState.getBaseState().withProperty(EnumFertility.FERTILITY, EnumFertility.UNRIPE));
+	            playerIn.addStat(AchievementLoader.getFirstBerries);
 	        }
 		 }
 	} 

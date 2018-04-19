@@ -6,8 +6,11 @@ import hundun.dontstarve.DontStarve;
 import hundun.dontstarve.IModName;
 import hundun.dontstarve.itemBlock.ItemBlockBerryBush;
 import hundun.dontstarve.itemBlock.ItemBlockMetalFurnace;
+import hundun.dontstarve.myIProperty.EnumMaterial;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.IStateMapper;
+import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemMultiTexture;
@@ -58,6 +61,9 @@ public class BlockLoader
         registerMulMetaRender(berryBush, 1, "berry_bush_barren");
         registerMulMetaRender(berryBush, 2, "berry_bush_unripe");
         
+        registerStateMapper(metalFurnace,
+                new StateMap.Builder().withName(EnumMaterial.MATERIAL).withSuffix("_furnace").build());
+        
     }
     
     
@@ -99,5 +105,12 @@ public class BlockLoader
     	//注册item
         GameRegistry.register(itemBlock);
         GameData.getBlockItemMap().put(block, itemBlock);
+    }
+    
+    //模型简化映射注册
+    @SideOnly(Side.CLIENT)
+    private static void registerStateMapper(Block block, IStateMapper mapper)
+    {
+        ModelLoader.setCustomStateMapper(block, mapper);
     }
 }

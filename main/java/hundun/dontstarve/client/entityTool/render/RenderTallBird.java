@@ -1,4 +1,4 @@
-package hundun.dontstarve.client.entity.render;
+package hundun.dontstarve.client.entityTool.render;
 
 import hundun.dontstarve.DontStarve;
 import hundun.dontstarve.entity.EntityTallBird;

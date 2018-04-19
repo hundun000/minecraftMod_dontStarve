@@ -1,6 +1,6 @@
 package hundun.dontstarve.client;
 
-import hundun.dontstarve.client.entity.EntityRenderLoader;
+import hundun.dontstarve.client.entityTool.EntityRenderLoader;
 import hundun.dontstarve.common.CommonProxy;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
