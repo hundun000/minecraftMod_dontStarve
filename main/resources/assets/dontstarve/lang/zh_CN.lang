@@ -9,7 +9,7 @@ item.dontstarve.spider_gland.name=蜘蛛腺体
 item.dontstarve.honey.name=蜂蜜
 item.dontstarve.monster_meat.name=怪物肉
 item.dontstarve.butterfly_wings.name=蝴蝶翅膀
-item.dontstarve.Willows_Lighter.name=威莉的打火机
+item.dontstarve.lighter.name=打火机
 
 tile.dontstarve.boulder.name=巨砾
 tile.dontstarve.berry_bush.name=浆果丛
@@ -23,6 +23,9 @@ tile.dontstarve.berry_bush.barren.name=枯萎浆果丛
 
 death.attack.byPig=%s被猪弄死了! 
 
-
 achievement.dontstarve.getFirstBerries=采集浆果
 achievement.dontstarve.getFirstBerries.desc=从浆果丛上获得浆果
+
+commands.position.usage=/position [玩家]
+commands.position.history=位置查询历史：
+commands.position.success=玩家 %1$s 处于名为 %3$s 的世界，其坐标为 %2$s

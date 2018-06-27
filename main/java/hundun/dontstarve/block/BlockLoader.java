@@ -35,13 +35,12 @@ public class BlockLoader
     
     
     public BlockLoader(FMLPreInitializationEvent event)
-    {//registerByBlock();
+    {
     	
         registerByBlock(boulder);
         
         registerMulMeta(metalFurnace,new ItemBlockMetalFurnace());
         registerMulMeta(berryBush,new ItemBlockBerryBush());
-       // registerByBlock(saplingDS);
         
 
         
@@ -51,7 +50,7 @@ public class BlockLoader
 
     @SideOnly(Side.CLIENT)
     public static void registerRenders()
-    {// registerRender();
+    {
         registerRender(boulder);
         
         registerMulMetaRender(metalFurnace, 0, "iron_furnace");
@@ -76,7 +75,7 @@ public class BlockLoader
     	registerMulMetaRender(blockIn,0,((IModName) blockIn).getName());
     }
     
-    //渲染助手一般型
+    //渲染助手非默认ItemBlock型
     @SideOnly(Side.CLIENT)
     private static void registerMulMetaRender(Block blockIn, int meta,String name)
     {
@@ -85,9 +84,7 @@ public class BlockLoader
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(blockIn), meta, model);
        // ModelLoader.registerItemVariants(Item.getItemFromBlock(blockIn), location);
     }
-    
-    
-    
+
     
     //注册助手常用型
     private static void registerByBlock(Block blockIn)

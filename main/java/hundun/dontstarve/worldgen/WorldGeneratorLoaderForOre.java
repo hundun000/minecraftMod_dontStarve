@@ -8,13 +8,13 @@ import net.minecraftforge.event.terraingen.OreGenEvent;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class WorldGeneratorLoader
+public class WorldGeneratorLoaderForOre
 {
 	private static WorldGenerator generatorBoulder = new WorldGeneratorBoulder();
 	
 	private BlockPos posFirstTime;
 	
-    public WorldGeneratorLoader()
+    public WorldGeneratorLoaderForOre()
     {
         MinecraftForge.ORE_GEN_BUS.register(this);
     }

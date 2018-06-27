@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
 @Mod(modid = DontStarve.MODID, name = DontStarve.NAME, version = DontStarve.VERSION, acceptedMinecraftVersions = "1.9.4")
 public class DontStarve {
@@ -40,5 +41,13 @@ public class DontStarve {
     {
         proxy.postInit(event);
     }
+    
+    @EventHandler
+    public void serverStarting(FMLServerStartingEvent event)
+    {
+        proxy.serverStarting(event);
+    }
+    
+    
 
 }

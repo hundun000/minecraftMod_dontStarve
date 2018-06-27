@@ -12,7 +12,7 @@ public class ItemLighter extends ItemFlintAndSteel implements IModName{
 		MyTool.generalSet(this);
 		
 		this.maxStackSize = 1;
-        //this.setMaxDamage(64);
+        this.setMaxDamage(0);
 	}
 
 	@Override

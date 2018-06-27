@@ -72,6 +72,7 @@ public class BlockBerryBush extends BlockBush implements IModName,IGrowable{
 	            EntityItem entity = new EntityItem(worldIn, pos.getX(), pos.getY(),pos.getZ(), new ItemStack(ItemLoader.berries, 1));
 	            worldIn.spawnEntityInWorld(entity); // 放置实体
 	            worldIn.setBlockState(pos, this.blockState.getBaseState().withProperty(EnumFertility.FERTILITY, EnumFertility.UNRIPE));
+	            
 	            playerIn.addStat(AchievementLoader.getFirstBerries);
 	        }
 		 }
